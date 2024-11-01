@@ -25,7 +25,8 @@ def contains_duplicate_less(arr):
     return False
 
 # Nested Loops iterates through each element 
-# Outer Loop iterates through each element of the arry and the inner loop checks for the subsequent. 
+# Outer Loop iterates through each element of the arry and the inner loop checks 
+# for the subsequent. 
 #   O(n^2)
 
 
@@ -33,6 +34,7 @@ arr = [random.randint(1,100) for i in range(100)]
 
 print(contains_duplicate_hash(arr))
 print(contains_duplicate_less(arr))
+print(f"\n")
 
 
 # results = 
@@ -40,5 +42,72 @@ print(contains_duplicate_less(arr))
     # True
     # Function 'contains_duplicate_less' took 0.0405 seconds to complete
     # True
+
+
+
+#### CHECK UNSCRAMBLING
+
+# We would want to check each array to see if there are duplicates in another hash table. 
+# The bad way would be to loop through string one then count each occurance of a character
+#     in both strings while looping through the first string.
+
+# First solution would be this: 
+
+@get_time
+def isScrambled(s, t):
+    if len(s) != len(t):
+        return -1 
+    
+    for letter in s:
+        c1 = 0 
+        c2 = 0
+
+        for l in s: 
+            if l == letter:
+                c1 += 1
+
+        for l in t:
+            if l == letter:
+                c2 += 2 
+
+    if c1 == c2:
+        return True  
+    
+    return False
+
+
+# The better approach is to use memory and store the counts in a hash table
+
+def isScrambled_improved(s,t):
+    if len(s) != len(t):
+        return -1
+    
+    letter_count = {}
+
+    for l in s:
+        if l in letter_count:
+            letter_count[l] += 1
+        else:
+            letter_count[l] = 1
+
+    for l in t:
+        if l in letter_count:
+            letter_count[l] -= 1
+        else:
+            return False
+    
+
+    for l in letter_count.values():
+        if l != 0:
+            return False
+
+    return True 
+
+s1 = "forgiveness"
+s2 = "givessnrofe"
+
+
+        
+
 
 
