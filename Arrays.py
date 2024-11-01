@@ -68,7 +68,7 @@ def isScrambled(s, t):
 
         for l in t:
             if l == letter:
-                c2 += 2 
+                c2 += 1 
 
     if c1 == c2:
         return True  
@@ -77,7 +77,7 @@ def isScrambled(s, t):
 
 
 # The better approach is to use memory and store the counts in a hash table
-
+@get_time
 def isScrambled_improved(s,t):
     if len(s) != len(t):
         return -1
@@ -105,6 +105,11 @@ def isScrambled_improved(s,t):
 
 s1 = "forgiveness"
 s2 = "givessnrofe"
+
+print(isScrambled(s1,s2))
+print(isScrambled_improved(s1,s2))
+
+
 
 
         
