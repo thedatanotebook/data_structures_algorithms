@@ -13,33 +13,24 @@ def get_time(function):
     return wrapper
 
 
-@get_time
-def linear_search_for_loop(arr, target):
-    for i in range(len(arr)):
-        if arr[i]==target:
-            return i
-    return -1
+# @get_time
+# def linear_search_for_loop(arr, target):
+#     for i in range(len(arr)):
+#         if arr[i]==target:
+#             return i
+#     return -1
 
-@get_time
-def linear_search_w_enumerate(arr,target):
-    for i, value in enumerate(arr):
-        if value == target:
-            return i 
-    return -1
-
-
-array = [1,2,3,4,5,6,7,8,9,10]
-target = 7
+# @get_time
+# def linear_search_w_enumerate(arr,target):
+#     for i, value in enumerate(arr):
+#         if value == target:
+#             return i 
+#     return -1
 
 
-print(linear_search_for_loop(array, 7))
-print(linear_search_w_enumerate(array, 7))
-
-#Results
-
-# Function 'linear_search_for_loop' took 0.0191 seconds to complete
-# Function 'linear_search_w_enumerate' took 0.0095 seconds to complete
+# array = [1,2,3,4,5,6,7,8,9,10]
+# target = 7
 
 
-
+# ß
 

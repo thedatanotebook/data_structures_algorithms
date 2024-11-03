@@ -111,11 +111,7 @@ print(isScrambled_improved(s1,s2))
 
 
 
-# String Rotation
-# Do we assume the strings are the same length? 
-# 
-def check_rotation(s1, s2):
-    pass
+
 
 
 
