@@ -109,6 +109,30 @@ s2 = "givessnrofe"
 print(isScrambled(s1,s2))
 print(isScrambled_improved(s1,s2))
 
+@get_time
+def two_sum_slow(arr, target):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if arr[i] +arr[j] == target:
+                return True
+    return -1
+
+@get_time
+def two_sum_fast(arr, target):
+    sum_val = {}
+    for i, value in enumerate(arr):
+        if value in sum_val:
+            return [i, sum_val[value]]
+        else:
+            sum_val[target-value] = i
+    return -1
+
+
+print(two_sum_slow([1,2,3,4,5], 8))
+print(two_sum_fast([1,2,3,4,5], 8))
+
+
+
 
 
 
